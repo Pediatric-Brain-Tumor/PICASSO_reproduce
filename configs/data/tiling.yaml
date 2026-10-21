@@ -1,0 +1,15 @@
+# Tissue segmentation + 256 px @ 0.5 um/px tile grid for all downloaded slides.
+slides_dir: ${DATA_ROOT}/slides
+manifest: ${DATA_ROOT}/manifest.csv
+output_dir: ${DATA_ROOT}/tiles
+projects: null            # e.g. [TCGA-CHOL] to tile a single project
+target_mpp: 0.5
+tile_px: 256
+mask_downsample: 64
+sat_thresh: 8
+use_otsu: true
+median_size: 7
+close_px: 4
+min_component_tiles: 4.0
+min_tissue_frac: 0.5
+workers: 16

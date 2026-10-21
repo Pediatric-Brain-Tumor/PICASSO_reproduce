@@ -1,0 +1,16 @@
+# Virchow2 CLS embeddings (fp16), one file per slide, row-aligned with tiles.parquet.
+tiles_dir: ${DATA_ROOT}/tiles
+output_dir: ${DATA_ROOT}/embeddings/virchow2
+projects: null
+model: hf-hub:paige-ai/Virchow2
+input_px: 224
+tile_px: 256
+save_mean_patch: false       # true also saves the mean patch token
+keep_jpeg_frac: 0.0       # >0 also saves this fraction of tiles as JPEG
+jpeg_dir: ${DATA_ROOT}/tiles_jpeg
+batch_size: 256
+num_workers: 12
+shard: 0
+num_shards: 1
+device: cuda
+dtype: float16

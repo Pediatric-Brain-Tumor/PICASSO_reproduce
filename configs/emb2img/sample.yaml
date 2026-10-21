@@ -1,0 +1,15 @@
+# Generate tiles from held-out embeddings and score the embedding closed loop
+# (cosine between the generated tile's Virchow2 CLS and the conditioning CLS).
+checkpoint: ${OUTPUT_ROOT}/emb2img_sd15_256/ema
+pairs_dir: ${PAIRS_DIR}
+output_dir: ${OUTPUT_ROOT}/emb2img_sd15_256/eval
+sd_model: stable-diffusion-v1-5/stable-diffusion-v1-5
+vae: stabilityai/sd-vae-ft-mse
+n: 512
+batch_size: 32
+num_steps: 100
+guidance: 4.5
+resolution: 256
+grid_n: 12
+seed: 0
+device: cuda

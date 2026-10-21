@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sae-picasso"
+version = "0.1.0"
+description = "Reproduction of the PICASSO TopK SAE and Emb2Img diffusion on Virchow2 embeddings of TCGA tiles."
+requires-python = ">=3.11"
+dependencies = [
+  "torch>=2.4",
+  "timm>=1.0",
+  "diffusers>=0.30",
+  "accelerate>=0.30",
+  "safetensors>=0.4",
+  "numpy>=1.26,<2",
+  "scipy>=1.11",
+  "scikit-learn>=1.4",
+  "opencv-python-headless>=4.8",
+  "polars>=1.0",
+  "pyarrow>=15",
+  "pyyaml>=6",
+  "pillow>=10",
+  "openslide-python>=1.3",   # also needs the OpenSlide C library (conda-forge: openslide)
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,7 @@
+checkpoint: ${OUTPUT_ROOT}/sae/virchow2_cls_x32_k30/sae.pt
+embeddings_dir: ${DATA_ROOT}/embeddings/virchow2
+output_dir: ${OUTPUT_ROOT}/concepts/virchow2_cls_x32_k30
+store_dir: ${STORE_DIR}
+field: cls
+batch_size: 8192
+device: cuda

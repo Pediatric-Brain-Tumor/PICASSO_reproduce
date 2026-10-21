@@ -1,0 +1,22 @@
+# Paper schedule: 16,000 steps, effective batch 1024 (= batch_size x n_gpus x grad_accum),
+# AdamW 1e-4, grad clip 1.0, condition dropout 0.1, EMA. U-Net initialised from SD 1.5, 256 px.
+# With 4 GPUs set grad_accum: 2, with 1 GPU grad_accum: 8.
+pairs_dir: ${PAIRS_DIR}
+output_dir: ${OUTPUT_ROOT}/emb2img_sd15_256
+sd_model: stable-diffusion-v1-5/stable-diffusion-v1-5
+init_from_sd: true
+steps: 16000
+batch_size: 128
+grad_accum: 1
+lr: 0.0001
+lr_warmup: 500
+weight_decay: 0.01
+grad_clip: 1.0
+cond_dropout: 0.1
+ema_decay: 0.9999
+gradient_checkpointing: true
+dtype: bfloat16
+log_every: 50
+save_every: 1000
+resume: true
+seed: 0
